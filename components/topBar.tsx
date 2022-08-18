@@ -1,6 +1,6 @@
 export default function TopBar() {
   return (
-    <div className="flex flex-row items-center h-20 gap-x-4 px-8 py-3 border-b-2">
+    <div className="flex items-center h-20 gap-x-4 px-8 py-3 border-b-2">
       <svg
         className="grow-0 max-h-full"
         xmlns="http://www.w3.org/2000/svg"

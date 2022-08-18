@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Days from '../components/days';
 import TopBar from '../components/topBar';
 
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
 
       <main>
         <TopBar />
+        <Days />
       </main>
     </div>
   );
