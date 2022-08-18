@@ -3,48 +3,6 @@ import Head from 'next/head';
 import Chips from '../components/chips';
 import MealsList from '../components/mealsList';
 
-const mockMeals = {
-  meals: [
-    {
-      strMeal: 'Beef and Mustard Pie',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg',
-      idMeal: '52874',
-    },
-    {
-      strMeal: 'Beef and Oyster pie',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/wrssvt1511556563.jpg',
-      idMeal: '52878',
-    },
-    {
-      strMeal:
-        'Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg',
-      idMeal: '52997',
-    },
-    {
-      strMeal: 'Beef Bourguignon',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/vtqxtu1511784197.jpg',
-      idMeal: '52904',
-    },
-    {
-      strMeal: 'Beef Brisket Pot Roast',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg',
-      idMeal: '52812',
-    },
-    {
-      strMeal: 'Beef Dumpling Stew',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/uyqrrv1511553350.jpg',
-      idMeal: '52873',
-    },
-  ],
-};
-
 interface HomeProps {
   meals: Array<Meal>;
 }
@@ -69,7 +27,12 @@ const Home: NextPage<HomeProps> = ({ meals }) => {
 };
 
 export const getServerSideProps = async () => {
-  const meals = mockMeals.meals as Array<Meal>;
+  const res = await fetch(
+    'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef'
+  );
+  const data = await res.json();
+
+  const meals = data.meals;
 
   return {
     props: { meals },
