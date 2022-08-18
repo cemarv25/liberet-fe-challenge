@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Liberet</h1>
+        <h1 className="text-5xl text-red-600">Liberet</h1>
       </main>
     </div>
   );
