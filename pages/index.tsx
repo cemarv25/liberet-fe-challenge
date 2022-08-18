@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import TopBar from '../components/topBar';
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1 className="text-5xl text-red-600">Liberet</h1>
+        <TopBar />
       </main>
     </div>
   );
