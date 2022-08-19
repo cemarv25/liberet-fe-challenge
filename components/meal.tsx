@@ -17,18 +17,7 @@ export default function Meal({ meal }: MealProps) {
   );
 
   if (error) return <div>Failed to load</div>;
-  if (!data)
-    return (
-      <div className="relative animate-pulse w-full h-96 py-2">
-        <div className="absolute top-4 right-2 h-4 w-8 bg-gray-100" />
-        <div className="w-full h-5/6 rounded-t-lg flex flex-col justify-end p-1">
-          <div className="bg-gray-100 h-4 w-3/4"></div>
-          <div className="bg-gray-100 h-4 w-3/4"></div>
-        </div>
-      </div>
-    );
-
-  console.log('meal with id', meal.idMeal, data.meals[0].strTags);
+  if (!data) return <div>Loading...</div>;
 
   return (
     <div className="relative w-full h-96 py-2 hover:shadow-lg hover:shadow-gray-200">
