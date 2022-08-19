@@ -1,7 +1,7 @@
 export default function BottomBar() {
   return (
     <div
-      className="flex justify-evenly items-center py-4"
+      className="absolute bottom-0 w-screen flex justify-evenly items-center py-4"
       style={{ backgroundColor: '#d1d1d1' }}
     >
       <svg

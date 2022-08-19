@@ -34,7 +34,7 @@ const Home: NextPage<HomeProps> = ({ meals, categories }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className="flex flex-col items-center py-2 overflow-scroll"
+        className="flex flex-col h-screen items-center py-2 overflow-scroll"
         style={{ backgroundColor: '#f1f1f1' }}
       >
         <Chips

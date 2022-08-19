@@ -14,7 +14,10 @@ export default function TopBar() {
           clipRule="evenodd"
         />
       </svg>
-      <div className="flex-auto w-3/4">
+      <div
+        className="flex-auto w-3/4"
+        onClick={() => alert('Esta funcionalidad aun no esta implementada')}
+      >
         <span className="text-3xl" style={{ color: '#ccc' }}>
           Select location...
         </span>
