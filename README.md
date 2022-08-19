@@ -2,7 +2,8 @@
 
 ## Visit the webpage!
 
-You can visit the deployed project via [this link](https://cesarmtzliberetchallenge.vercel.app).
+You can visit the deployed project via [this link](https://cesarmtzliberetchallenge.vercel.app). }
+The webpage is meant to be used in a device with dimensions 720x1280
 
 ## Development info
 
