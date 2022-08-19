@@ -1,7 +1,5 @@
 import Chip from './chip';
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
 interface ChipsProps {
   selectedCategory: string;
   setSelectedCategory: (val: Category) => void;
@@ -58,12 +56,6 @@ export default function Chips({
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
     </svg>
   );
-
-  const handleEmptyClick = () => alert('Has hecho click en "+1 Platillos"');
-
-  const handleCatClick = () => alert('Has hecho click en las categorias');
-
-  const handleTimeClick = () => alert('Has hecho click en los tiempos');
 
   return (
     <div className="flex gap-2 w-5/6 justify-evenly">
