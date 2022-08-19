@@ -1,26 +1,18 @@
-import { useEffect, useState } from 'react';
-import useSWR from 'swr';
 import Chip from './chip';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-export default function Chips() {
-  const [categories, setCategories] = useState(['Loading...']);
-  const { data, error } = useSWR(
-    'https://www.themealdb.com/api/json/v1/1/categories.php',
-    fetcher
-  );
+interface ChipsProps {
+  selectedCategory: string;
+  setSelectedCategory: (val: Category) => void;
+  categories: Array<Category>;
+}
 
-  useEffect(() => {
-    if (!data) {
-      setCategories(['Error']);
-    } else {
-      setCategories(data.categories);
-    }
-  }, [data]);
-
-  if (error) setCategories(['Error']);
-
+export default function Chips({
+  categories,
+  selectedCategory,
+  setSelectedCategory,
+}: ChipsProps) {
   const timeImg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -77,21 +69,23 @@ export default function Chips() {
     <div className="flex gap-2 w-5/6 justify-evenly">
       <Chip
         type="time"
+        description="Elige un horario de entrega"
         values={['11:00am - 12:00pm', '1:00pm - 2:00pm', '2:00pm - 3:00pm']}
         img={timeImg}
-        handleClick={handleTimeClick}
       />
       <Chip
         type="category"
+        description="Elige un servicio"
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
         values={categories}
         img={catImg}
-        handleClick={handleCatClick}
       />
       <Chip
         type="empty"
+        description="empty"
         values={['Platillos']}
         img={emptyImg}
-        handleClick={handleEmptyClick}
       />
     </div>
   );
